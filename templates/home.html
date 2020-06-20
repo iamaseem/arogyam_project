@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>AROGYAM</title>
+    <link rel="stylesheet" href="css/style1.css">
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-analytics.js"></script>
+</head>
+
+<body>
+<div style="display: none" id="hideAll">&nbsp;</div>
+    <div class="containerh" id="container">
+	<div class="form-container sign-in-container">
+		<form action="#">
+			 <h2 id="welcome"></h2>
+        <button id="signout">Sign Out</button>
+		</form>
+	</div>
+    </div>
+     <script type="text/javascript">
+   document.getElementById("hideAll").style.display = "block";
+ </script> 
+    <script src="script/script.js"></script>
+    <script>
+        firebase.auth().onAuthStateChanged(function(user)
+        {
+            if(!user)
+            {
+                window.alert("Sign in to view");
+                window.location.href= "index.html";
+            }
+            else{
+                user1(user);
+            }
+        });
+    </script>
+</body>
+
+</html>

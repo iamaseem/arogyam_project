@@ -1,0 +1,47 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>AROGYAM</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/style1.css">
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-analytics.js"></script>
+</head>
+
+<body>
+<div class="container" id="container">
+	<div class="form-container sign-in-container">
+		<form action="#">
+			<h1>Sign in</h1>
+			<div class="social-container">
+                    <a><button id="google" onclick="googlesignin()" class="ignore-css"><img width="20px" alt="Google sign-in" 
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" /></button></a>
+			</div>
+			<span>or use your account</span>
+			<input id="email" type="email" placeholder="Email" />
+			<input id="password" type="password" placeholder="Password" />
+			<a href="#">Forgot your password?</a>
+			<button id="signin">Sign In</button>
+		</form>
+	</div>
+</div>
+<script src="script/script.js"></script>
+<script>
+    firebase.auth().onAuthStateChanged(function(user)
+    {
+        if(user)
+        {
+            window.location.href= "home.html";
+        }
+    });
+</script>
+</body>
+
+</html>
